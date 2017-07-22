@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/tachyons.css">
+	<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+</head>
+<body onload="hideModal()">
+<main class="w-100">
+	<header class="w-100 bg-light-grey pv2 ph2 ph5-ns">
+		<div class="w-50 dib">
+			<a class="f6 fw3 fw6-ns hover-blue link pointer black-80 dib">Staff Manager</a>
+		</div><div class="w-50 dib tr">
+			<a class="f6 fw3 fw6-ns hover-blue link pointer black-80 mr3-m mr4-l dib">Home</a>
+			<a class="f6 fw3 fw6-ns hover-blue link pointer black-80 mr3-m mr4-l dib">About</a>
+			<a class="f6 fw3 fw6-ns hover-blue link pointer black-80 mr3-m mr4-l dib login">Login</a>
+		</div>
+	</header>
+	<section class="w-100 vh-75 tc cover" style="background: url(img/classroom.jpg);">
+		<div class="dib mt6 pt4">
+			<span class="db white f1 Helvetica Neue fw6">CB University</span>
+			<span class="white fw6">Best in Nigeria</span>
+			<hr>
+		</div>
+
+		<!-- Login Modal -->
+		<div class="bg-light-gray modal vh-75 fixed top-2 w-100">
+			<span class="f3 fw4 bg-red ph2 br2 bn pointer grow close-modal" title="Close">&times;</span>
+			<!-- Login Modal Content -->
+			<form class="animate bg-light-grey" action="/">
+				<div class="tc ph2 ph4-ns">
+					<input type="text" class="w-50 br2 b--black-10 pv2 mv2" placeholder="enter username" name="uname" required><br>
+
+					<input type="password" class="w-50 br2 b--black-10 pv2 mv2" placeholder="enter password" name="pword" required><br>
+
+					<button type="submit" class="pointer grow bg-green white bn br2 pa2 mh2">Login</button>
+					<input type="checkbox" checked="checked"> Remember me
+				</div>
+				<div class="tc pt pt4-ns">
+                    <span class="br2 b--black-10 pv2 mh2">Forgot <a href="#">password?</a></span>
+				</div>
+			</form>
+		</div>
+	</section>
+	<footer class="w-100 tc bg-light-grey">
+		<div class="mt5-ns mb2-ns">
+			<a class="f6 fw3 fw6-ns hover-blue link pointer black-80 mr2 mr3-ns dib">Home</a>
+			<a class="f6 fw3 fw6-ns hover-blue link pointer black-80 mr2 mr3-ns dib">About</a>
+			<a class="f6 fw3 fw6-ns hover-blue link pointer black-80 mr2 mr3-ns dib">Login</a>
+		</div>
+		<div>
+			<span><small>© 2017</small> <a>cb_net</a></span>
+		</div>
+	</footer>
+</main>
+<script type="text/javascript">
+	// Get the modal
+	let btnLogin  = document.querySelector('.login');
+	let btnClose  = document.querySelector('.close-modal');
+	let modalView = document.querySelector('.modal');
+	//add functions
+	function displayModal() {
+		// body...
+		if (modalView.style.display === 'none') {
+			modalView.style.display = 'block';
+		}
+	}
+	function hideModal() {
+		// body...
+		modalView.style.display = 'none';
+	}
+	//add events
+	btnLogin.addEventListener('click', displayModal);
+	btnClose.addEventListener('click', hideModal);
+</script>
+</body>
+</html>
